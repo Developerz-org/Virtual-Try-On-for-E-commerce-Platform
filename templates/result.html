@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VTON</title>
+
+    <style>
+      * {
+        margin: 0;
+        font-family: Arial;
+        border: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .navbar {
+        background-color: white;
+        color: rgb(233, 92, 92);
+        padding: 30px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* height: 30px; */
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+      }
+      .brand img {
+        width: 60px;
+        margin-right: 5px;
+        margin-left: 40px;
+      }
+      .brand span {
+        font-weight: bolder;
+        font-size: 1.74rem;
+      }
+      .nav-links {
+        text-decoration: none;
+        color: rgb(233, 92, 92);
+        margin-right: 15px;
+      }
+      .btn {
+        padding: 10px 20px;
+        background-color: rgb(233, 92, 92);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 17px;
+      }
+      .main-panel {
+        padding: 25px;
+      }
+      .section {
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .panel {
+        display: flex;
+        height: auto;
+        /* margin-top: 25px; */
+        width: 100%;
+      }
+      .main-panel input {
+        padding: 8px 15px;
+        background-color: rgb(233, 92, 92);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        align-self: stretch;
+      }
+      .heading h1 {
+        margin: 0px 130px;
+        font-size: 60px;
+        font-family: "Georgia", "serif";
+        font-weight: bolder;
+      }
+      .section h3 {
+        /* font-family: Verdana, Arial, Helvetica, sans-serif; */
+        font-family: math;
+        text-align: center;
+        /* margin-left: 230px; */
+      }
+
+      .panel {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .panel-box1 {
+        display: flex;
+
+        justify-content: space-around;
+      }
+
+      .img1 {
+        width: 250px;
+        height: auto;
+        padding: 10px 20px;
+      }
+      #arrow {
+        width: 128px;
+        height: 128px;
+        margin-top: 250px;
+      }
+
+      .download {
+        padding: 30px;
+      }
+
+      input[type="submit"] {
+        padding: 15px 35px;
+        font-size: 18px;
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        color: rgb(233, 92, 92);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="brand">
+        <img src="static/temp/clothes-hanger.png" alt="Symbol" />
+        <span style="color: rgb(238, 118, 118); font-family: cursive">Try</span
+        ><span style="color: rgb(64, 61, 61); font-family: cursive">On</span>
+      </div>
+      <div>
+        <a href="#" class="nav-links">About</a>
+        <a href="#" class="nav-links">Services</a>
+        <button class="btn">Sign In</button>
+      </div>
+    </div>
+
+    <div class="heading">
+      <h1>
+        <span style="color: rgb(143, 141, 141); font-family: 'Georgia', 'serif'"
+          >GOOD</span
+        ><span style="color: black; font-family: 'Georgia', 'serif'">STYLE</span
+        >: Virtual Clothing Try On
+      </h1>
+    </div>
+    <br />
+    <div class="main-panel">
+      <div class="panel">
+        <div class="section">
+          <h3>Uploaded Image</h3>
+          <br />
+          <div class="panel-box1">
+            <img src="{{ url_for('static',
+            filename="data/input/image/"+user_image) }}" class="img1" /> <img
+            src="{{ url_for('static', filename="data/input/cloth/"+cloth_image)
+            }}" class="img1"/>
+          </div>
+        </div>
+        <img src="static/temp/right-arrow (1).png" id="arrow" />
+        <div class="section">
+          <h3 class="sub-heading">Try On Image</h3>
+          <br />
+          <div class="panel-box2">
+            <img src="{{ url_for('static',
+            filename="result/TOM/input/try-on/"+user_image) }}" class="img1"/>
+            <div class="download">
+              <a
+                href="{{ url_for('static',filename='result/TOM/input/try-on/'+user_image) }}"
+                download="result.jpg"
+              >
+                <input type="submit" value="Download Now!" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTON</title>
+    <link rel="stylesheet" href="static/temp/frt.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">
+            <img src="static/temp/clothes-hanger.png" alt="Symbol">
+            <span style="color: rgb(238, 118, 118);font-family: cursive;">Try</span><span style="color: rgb(64, 61, 61);font-family: cursive;">On</span>
+        </div>
+        <div>
+            <a href="#" class="nav-links">About</a>
+            <a href="#" class="nav-links">Services</a>
+            <button class="btn">Sign In</button>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <div class="panel">
+            <div class="panel-box1 section">
+                <img src="static/temp/frontpage.png" alt="img1" class="img1">
+            </div>
+    
+            <div class="panel-box2 section">
+                <h1><span style="color: rgb(143, 141, 141);font-family: 'Georgia','serif';">GOOD</span><span style="color: black;font-family: 'Georgia','serif';">STYLE</span>: Virtual Clothing Try On</h1>
+                <br><br><br>
+                <form action="upload" method="post" enctype="multipart/form-data">
+                    <h3 class="text-muted">Target Person Image</h3><br>
+                    <input type="file" name="personImage" ><br /><br><br>
+                    <h3 class="text-muted">Cloth Image</h3><br>
+                    <input type="file" name="clothImage"><br /><br /><br><br>
+                    <input type="submit" value="generateTryonImage">
+                  </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
